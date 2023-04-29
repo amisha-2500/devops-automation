@@ -28,12 +28,10 @@ pipeline {
                 }
             }
         }
-        stage('Deploy on tomcat'){
-            steps{
-                script{
-                  sh 'docker run -p 8081:8080 amisha124/devops-integration' 
-                }
-            }
-        }
+       stage('Deploy') {
+           steps{
+               sh 'docker ssh://jenkins@52.66.5.168 run -d -p 8081:8080 amisha124/devops-integration'
+}
+       }
     }
 }
