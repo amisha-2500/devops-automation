@@ -30,7 +30,7 @@ pipeline {
         }
        stage('Deploy') {
            steps{
-               sh 'docker ssh://jenkins@52.66.5.168 run -d -p 8081:8080 amisha124/devops-integration'
+               sh 'docker run -d -p 8081:8080 amisha124/devops-integration'
 }
        }
     }
