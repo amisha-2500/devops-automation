@@ -28,5 +28,9 @@ pipeline {
                 }
             }
         }
+        stage('Deploy on tomcat'){
+            steps{
+                script{
+                  sh 'docker run -p 8081:8080 amisha124/devops-integration'  
     }
 }
